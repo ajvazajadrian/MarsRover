@@ -90,8 +90,12 @@ function moveForward(roverDirection) {
     console.log("You can´t plave player outside of the board!");
   } // right now not working, newPositions value is not read
   let newPosition = { x: rover.x, y: rover.y };
-  rover.travelLog.push(rover.newPosition);
-}
+  rover.travelLog.push(newPosition);
+};
+
+
+
+
 function moveBackward(roverDirection) {
   console.log("moveBackward was called");
   if (rover.x >= 0 && rover.x < 10 && rover.y >= 0 && rover.y < 10) {
@@ -122,6 +126,10 @@ function moveBackward(roverDirection) {
   let newPosition = { x: rover.x, y: rover.y };
   rover.travelLog.push(newPosition);
 }
+
+
+
+
 
 function command(userInput) {
   for (let i = 0; i < userInput.length; i++) {
