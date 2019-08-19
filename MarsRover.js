@@ -31,9 +31,9 @@ function turnLeft(roverDirection) {
         console.log('Something went wrong');
         break;
   } 
+  console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
 };
-turnLeft()
-console.log(rover.direction)
+
 
 
 function turnRight(roverDirection) {
@@ -59,10 +59,10 @@ function turnRight(roverDirection) {
         console.log('Something went wrong');
         break;
   } 
+  console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
 }
 
-turnRight()
-console.log(rover.direction)
+// moweForward
 
 function moveForward(roverDirection) {
   console.log("moveForward was called");
@@ -90,9 +90,9 @@ function moveForward(roverDirection) {
       }
   } else {
     console.log('You can´t plave player outside of the board!')
-  };
+  };   // right now not working, newPositions value is not read
   let newPosition = {x: rover.x, y: rover.y};
-  rover.travelLog.push(rover.travelLog);
+  rover.travelLog.push(rover.newPosition);
 };
 function moveBackward(roverDirection) {
   console.log("moveBackward was called");
@@ -122,7 +122,7 @@ function moveBackward(roverDirection) {
     console.log('You can´t plave player outside of the board!')
   };
   let newPosition = {x: rover.x, y: rover.y};
-  rover.travelLog.push(rover.travelLog);
+  rover.travelLog.push(newPosition);
 }
 
 function command(userInput){
@@ -144,8 +144,18 @@ function command(userInput){
       default:
         console.log('something went wrong')
     }
-   
+    if(userInput !== 'r' && userInput !== 'l' && userInput !== 'f' && userInput !== 'b'){
+      console.log('please enter a valid command'+' previus position'+ travelLog)
+    }
   }
 };
-console.log('++++++')
-command('rrlff')
+console.log('**********************')
+command('f')
+
+console.log(rover.travelLog)
+
+
+
+// Obstacles 
+// Obstavles for rover
+// additional rovers, if rover crash into rover console log
