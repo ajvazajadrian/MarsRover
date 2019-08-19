@@ -4,6 +4,7 @@ const rover = {
   direction: 'N',
   x: 0,
   y: 0,
+  travelLog: []
 };
 
 // ======================
@@ -87,3 +88,26 @@ function moveForward(roverDirection) {
         break;
   } 
 }
+
+function command(userInput){
+  for(let i = 0; i< userInput.length; i++) {
+    let order = userInput[i];
+    switch(order){
+      case 'r': //right 
+        turnRight(userInput);
+        break;
+      case 'l':
+      turnLeft(userInput);
+      break;
+      case 'f': 
+      moveForward(userInput);
+      break;
+      default:
+        console.log('something went wrong')
+    }
+    let newPosition = {x: rover.x, y: rover.y};
+      rover.travelLog.push(rover.travelLog);
+  }
+};
+console.log('++++++')
+command('rrlff')
