@@ -66,6 +66,7 @@ console.log(rover.direction)
 
 function moveForward(roverDirection) {
   console.log("moveForward was called");
+  if(rover.x >= 0 && rover.x < 10 && rover.y >=0 && rover.y < 10){
   switch (rover.direction) {
     case 'N':
        rover.y--;
@@ -86,7 +87,42 @@ function moveForward(roverDirection) {
       default:
         console.log('Something went wrong');
         break;
-  } 
+      }
+  } else {
+    console.log('You can´t plave player outside of the board!')
+  };
+  let newPosition = {x: rover.x, y: rover.y};
+  rover.travelLog.push(rover.travelLog);
+};
+function moveBackward(roverDirection) {
+  console.log("moveBackward was called");
+  if(rover.x >= 0 && rover.x < 10 && rover.y >=0 && rover.y < 10){
+  switch (rover.direction) {
+    case 'N':
+       rover.y++;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+      break;
+    case 'E':
+      rover.x--;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+      break;
+    case 'S':
+        rover.y--;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+        break;
+    case 'W':
+      rover.x++;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+      break;
+      default:
+        console.log('Something went wrong');
+        break;
+      }
+  } else {
+    console.log('You can´t plave player outside of the board!')
+  };
+  let newPosition = {x: rover.x, y: rover.y};
+  rover.travelLog.push(rover.travelLog);
 }
 
 function command(userInput){
@@ -102,11 +138,13 @@ function command(userInput){
       case 'f': 
       moveForward(userInput);
       break;
+      case 'b': 
+      moveBackward(userInput);
+      break;
       default:
         console.log('something went wrong')
     }
-    let newPosition = {x: rover.x, y: rover.y};
-      rover.travelLog.push(rover.travelLog);
+   
   }
 };
 console.log('++++++')
