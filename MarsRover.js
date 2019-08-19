@@ -65,5 +65,25 @@ console.log(rover.direction)
 
 function moveForward(roverDirection) {
   console.log("moveForward was called");
+  switch (rover.direction) {
+    case 'N':
+       rover.y--;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+      break;
+    case 'E':
+      rover.x++;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+      break;
+    case 'S':
+        rover.y++;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+        break;
+    case 'W':
+      rover.x--;
+      console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+      break;
+      default:
+        console.log('Something went wrong');
+        break;
+  } 
 }
-
