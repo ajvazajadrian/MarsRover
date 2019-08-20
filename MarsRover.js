@@ -148,25 +148,19 @@ function command(userInput) {
         moveBackward(userInput);
         break;
       default:
-        console.log("something went wrong");
+        console.log("please enter a valid command");
     }
-    if (
-      userInput !== "r" &&
-      userInput !== "l" &&
-      userInput !== "f" &&
-      userInput !== "b"
-    ) {
-      console.log(
-        "please enter a valid command" + " previus position" + travelLog
-      );
-    }
+
   }
 }
 console.log("**********************");
-command("f");
+console.log(rover)
 
-console.log(rover.travelLog);
+// turnLeft()
+// turnLeft()
+// moveForward()
+// turnLeft()
+// moveForward()
+// moveForward()
 
-// Obstacles
-// Obstavles for rover
-// additional rovers, if rover crash into rover console log
+command('rföf')
