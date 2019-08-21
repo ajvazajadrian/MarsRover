@@ -60,69 +60,99 @@ function turnRight(roverDirection) {
   console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
 }
 
-// moveForward
+/* I chose this method instead of the if method in the exercise because in the previous and and in 
+the examples if the rover was at 0.0, it turned out to be true. 
+this allowed me to to perform an action so i could reach -1 */
 
 function moveForward(roverDirection) {
   console.log("moveForward was called");
-  if (rover.x >= 0 && rover.x < 10 && rover.y >= 0 && rover.y < 10) {
+  
     switch (rover.direction) {
       case "N":
+        if(rover.y > 0){
         rover.y--;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+        }else{
+          console.log("You can´t plave player outside of the board!")
+        }
         break;
       case "E":
-        rover.x++;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+          if(rover.x < 9){
+            rover.x++;
+            }else{
+              console.log("You can´t plave player outside of the board!")
+            }
         break;
       case "S":
-        rover.y++;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+          if(rover.y < 9){
+            rover.y++;
+            }else{
+              console.log("You can´t plave player outside of the board!")
+            }
         break;
       case "W":
-        rover.x--;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+          if(rover.x > 0){
+            rover.x--;
+            }else{
+              console.log("You can´t plave player outside of the board!")
+            }
+        
         break;
       default:
         console.log("Something went wrong");
         break;
     }
-  } else {
-    console.log("You can´t plave player outside of the board!");
-  } // right now not working, newPositions value is not read
+    console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+
+
+  
   let newPosition = { x: rover.x, y: rover.y };
   rover.travelLog.push(newPosition);
 };
 
 
-
+/* I chose this method instead of the if method in the exercise because in the previous and and in 
+the examples if the rover was at 0.0, it turned out to be true. 
+this allowed me to to perform an action so i could reach -1 */
 
 function moveBackward(roverDirection) {
-  console.log("moveBackward was called");
-  if (rover.x >= 0 && rover.x < 10 && rover.y >= 0 && rover.y < 10) {
-    switch (rover.direction) {
-      case "N":
-        rover.y++;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+    console.log("moveBackward was called");
+      switch (rover.direction) {
+        case "N":
+          if(rover.y < 9){
+          rover.y++;
+        }else{
+          console.log("You can´t plave player outside of the board!")
+        }
         break;
-      case "E":
-        rover.x--;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+        case "E":
+        if(rover.x > 0){
+          rover.x--;
+        }else{
+          console.log("You can´t plave player outside of the board!")
+              }
+          break;
+        case "S":
+        if(rover.y > 0){
+          rover.y--;
+        }else{
+console.log("You can´t plave player outside of the board!")
+                }
         break;
-      case "S":
-        rover.y--;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+        case "W":
+        if(rover.x < 9){
+          rover.x++;
+        }else{
+          console.log("You can´t plave player outside of the board!")
+        }
         break;
-      case "W":
-        rover.x++;
-        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
-        break;
-      default:
+        default:
         console.log("Something went wrong");
         break;
-    }
-  } else {
-    console.log("You can´t plave player outside of the board!");
-  }
+        }
+        
+         
+        console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
+  
   let newPosition = { x: rover.x, y: rover.y };
   rover.travelLog.push(newPosition);
 }
@@ -163,4 +193,4 @@ console.log(rover)
 // moveForward()
 // moveForward()
 
-command('rföf')
+command('bbblbbbbbbbbbblbbbbbffffffffff')
