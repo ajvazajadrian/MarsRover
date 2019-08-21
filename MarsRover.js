@@ -162,6 +162,8 @@ console.log("You can´t plave player outside of the board!")
 
 
 function command(userInput) {
+userInput =  userInput.toLowerCase()
+
   for (let i = 0; i < userInput.length; i++) {
     let order = userInput[i];
     switch (order) {
@@ -193,4 +195,4 @@ console.log(rover)
 // moveForward()
 // moveForward()
 
-command('bBBb'.toLowerCase())
+command('BbBb')
