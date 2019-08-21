@@ -193,4 +193,4 @@ console.log(rover)
 // moveForward()
 // moveForward()
 
-command('bbblbbbbbbbbbblbbbbbffffffffff')
+command('bBBb'.toLowerCase())
