@@ -60,9 +60,6 @@ function turnRight(roverDirection) {
   console.log(`Rovers has position: x: ${rover.x}, y: ${rover.y}`);
 }
 
-/* I chose this method instead of the if method in the exercise because in the previous and and in 
-the examples if the rover was at 0.0, it turned out to be true. 
-this allowed me to to perform an action so i could reach -1 */
 
 function moveForward(roverDirection) {
   console.log("moveForward was called");
@@ -110,9 +107,6 @@ function moveForward(roverDirection) {
 };
 
 
-/* I chose this method instead of the if method in the exercise because in the previous and and in 
-the examples if the rover was at 0.0, it turned out to be true. 
-this allowed me to to perform an action so i could reach -1 */
 
 function moveBackward(roverDirection) {
     console.log("moveBackward was called");
